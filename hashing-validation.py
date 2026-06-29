@@ -46,3 +46,26 @@ def process():
 
     signature = sign(h, "auth_key_777")
     valid = verify(h, signature, "auth_key_777")
+
+    print("Hash:", h)
+    print("Signature:", signature)
+    print("Valid:", valid)
+
+    return system
+
+def audit(system):
+    print("\nStored Contracts:")
+    for k, v in system.records.items():
+        print(k, v)
+
+def status():
+    print("\nSystem Status: Active Authentication Layer")
+
+def main():
+    sys = process()
+    audit(sys)
+    status()
+    print("Complete")
+
+if __name__ == "__main__":
+    main()
